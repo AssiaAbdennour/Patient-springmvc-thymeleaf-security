@@ -9,32 +9,55 @@
 </head>
 <body>
 <div layout:fragment="content1" >
-    <div class="col-6 offset-3" >
+    <div class="col-6 offset-3"  >
         <form method="post" th:action="@{/admin/save}">
+            <pre></pre>
+            <pre></pre>
+            <div class="card-header">Formulaire patients</div>
+            <pre></pre>
             <div>
-                <label for="nom">Nom</label>
+                <i class='far fa-address-book'></i>
+                <label for="nom">Nom Complet </label>
                 <input id="nom" class="form-control" type="text" name="nom" th:value="${patient.nom}" >
                 <span class="text-danger" th:errors="${patient.nom}"></span>
             </div>
-
+            <pre></pre>
             <div>
+                <i class='far fa-calendar'></i>
                 <label>Date Naissance</label>
                 <input class="form-control" type="date" name="dateNaissance" th:value="${patient.dateNaissance}" >
-                <span class="text-danger" th:errors="${patient.dateNaissance}"></span>
+                <span class="text-danger" th:errors="${patient.dateNaissance}"><i class='fas fa-calendar-alt'></i></span>
             </div>
-
+            <pre></pre>
             <div>
+                <i class='fas fa-procedures'></i>
                 <label>Malade</label>
                 <input type="checkbox" name="malade" th:checked="${patient.malade}" >
                 <span class="text-danger" th:errors="${patient.malade}"></span>
             </div>
-
+            <pre></pre>
             <div>
                 <label>Score</label>
                 <input class="form-control" type="text" name="score" th:value="${patient.score}" >
                 <span class="text-danger" th:errors="${patient.score}"></span>
             </div>
-            <button type="submit" class="btn btn-primary">Save</button>
+            <pre></pre>
+            <div>
+                <i class='fas fa-id-card-alt'></i>
+                <label>deja Client</label>
+                <input type="checkbox" name="dejaClient" th:checked="${patient.dejaClient}" >
+                <span class="text-danger" th:errors="${patient.dejaClient}"></span>
+            </div>
+            <pre></pre>
+            <div>
+                <i class="fas fa-band-aid"></i>
+                <label> Couverture Médicale</label>
+                <input type="checkbox" name="couvertureMedicale" th:checked="${patient.couvertureMedicale}" >
+                <span class="text-danger" th:errors="${patient.couvertureMedicale}"></span>
+            </div>
+            <pre></pre>
+            <pre></pre>
+            <button type="submit" class="btn btn-outline-primary">Save</button>
         </form>
     </div>
 
